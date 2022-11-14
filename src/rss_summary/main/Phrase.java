@@ -13,9 +13,9 @@ public abstract class Phrase {
 		// tie implementation to a database
         if (this == obj) return true;
         if (obj == null) return false;
-        if (getClass() != obj.getClass()) return false;
+        if (!(obj instanceof Phrase)) return false;
         
-        return ((Phrase) obj).text() == text();
+        return ((Phrase) obj).text().equals(text());
 	}
 	
 	public int hashCode() {
