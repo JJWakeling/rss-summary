@@ -15,7 +15,7 @@ public class WordSentence implements Sentence {
 		AbundanceTable abundances = new HashMapAbundanceTable();
 	
 		for (int startIndex = 0; startIndex < words.length; startIndex++) {
-			for (int length = 1; length < words.length - startIndex; length++) {
+			for (int length = 1; length <= words.length - startIndex; length++) {
 				abundances.add(
 					new StringPhrase(
 						String.join(
