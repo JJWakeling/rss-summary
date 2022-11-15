@@ -11,7 +11,7 @@ public class MainClass {
 			System.out.println("Enter a sentence");
 			Sentence sentence = new StringSentence(scanner.nextLine());
 			
-			for (Map.Entry<Phrase, Integer> row : sentence.subsequences().table().entrySet()) {
+			for (Map.Entry<Phrase, Integer> row : sentence.subPhrases().table().entrySet()) {
 				System.out.println(
 					String.format(
 						"%s : %d",

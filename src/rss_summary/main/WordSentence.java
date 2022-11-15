@@ -11,7 +11,7 @@ public class WordSentence implements Sentence {
 	}
 
 	@Override
-	public AbundanceTable subsequences() {
+	public AbundanceTable subPhrases() {
 		AbundanceTable abundances = new HashMapAbundanceTable();
 	
 		for (int startIndex = 0; startIndex < words.length; startIndex++) {

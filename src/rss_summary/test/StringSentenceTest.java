@@ -12,10 +12,10 @@ import rss_summary.main.*;
 public class StringSentenceTest {
 
 	@Test
-	public void testSubsequences() {
+	public void testPhraseCounting() {
 		Set<Map.Entry<Phrase, Integer>> actualSubsequences = 
 			new StringSentence("we'll weather the weather whatever the weather")
-				.subsequences()
+				.subPhrases()
 				.table()
 				.entrySet();
 		Assert.assertEquals(

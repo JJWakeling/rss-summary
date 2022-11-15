@@ -9,11 +9,11 @@ public class StringSentence implements Sentence {
 	}
 
 	@Override
-	public AbundanceTable subsequences() {
+	public AbundanceTable subPhrases() {
 		return new WordSentence(
 			text.split(" ")
 		)
-			.subsequences();
+			.subPhrases();
 	}
 
 }
