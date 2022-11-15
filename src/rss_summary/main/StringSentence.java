@@ -1,7 +1,5 @@
 package rss_summary.main;
 
-import java.util.Collection;
-
 public class StringSentence implements Sentence {
 
 	private final String text;
