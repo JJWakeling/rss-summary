@@ -10,12 +10,10 @@ public class StringSentence implements Sentence {
 
 	@Override
 	public AbundanceTable subsequences() {
-	// dummy implementation for purposes of validating test
-		return new HashMapAbundanceTable();
-//		return new WordSentence(
-//			text.split(" ")
-//		)
-//			.subsequences();
+		return new WordSentence(
+			text.split(" ")
+		)
+			.subsequences();
 	}
 
 }
