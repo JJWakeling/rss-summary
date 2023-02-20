@@ -32,39 +32,39 @@ public class StringSentenceTest {
 	
 	private void testSentenceContainsExpectedPhrases(String sentence) {
 		Assert.assertEquals(
-				new StringSentence(sentence)
-					.subPhrases()
-					.table()
-					.entrySet(),
-				new HashSet<Map.Entry<Phrase, Integer>>(
-					Arrays.asList(
-						uniquePhrase("we'll"),
-						phraseCount("weather", 3),
-						phraseCount("the", 2),
-						uniquePhrase("whatever"),
-						uniquePhrase("we'll weather"),
-						uniquePhrase("weather the"),
-						phraseCount("the weather", 2),
-						uniquePhrase("weather whatever"),
-						uniquePhrase("whatever the"),
-						uniquePhrase("we'll weather the"),
-						uniquePhrase("weather the weather"),
-						uniquePhrase("the weather whatever"),
-						uniquePhrase("weather whatever the"),
-						uniquePhrase("whatever the weather"),
-						uniquePhrase("we'll weather the weather"),
-						uniquePhrase("weather the weather whatever"),
-						uniquePhrase("the weather whatever the"),
-						uniquePhrase("weather whatever the weather"),
-						uniquePhrase("we'll weather the weather whatever"),
-						uniquePhrase("weather the weather whatever the"),
-						uniquePhrase("the weather whatever the weather"),
-						uniquePhrase("we'll weather the weather whatever the"),
-						uniquePhrase("weather the weather whatever the weather"),
-						uniquePhrase("we'll weather the weather whatever the weather")					
-					)
+			new HashSet<Map.Entry<Phrase, Integer>>(
+				Arrays.asList(
+					uniquePhrase("we'll"),
+					phraseCount("weather", 3),
+					phraseCount("the", 2),
+					uniquePhrase("whatever"),
+					uniquePhrase("we'll weather"),
+					uniquePhrase("weather the"),
+					phraseCount("the weather", 2),
+					uniquePhrase("weather whatever"),
+					uniquePhrase("whatever the"),
+					uniquePhrase("we'll weather the"),
+					uniquePhrase("weather the weather"),
+					uniquePhrase("the weather whatever"),
+					uniquePhrase("weather whatever the"),
+					uniquePhrase("whatever the weather"),
+					uniquePhrase("we'll weather the weather"),
+					uniquePhrase("weather the weather whatever"),
+					uniquePhrase("the weather whatever the"),
+					uniquePhrase("weather whatever the weather"),
+					uniquePhrase("we'll weather the weather whatever"),
+					uniquePhrase("weather the weather whatever the"),
+					uniquePhrase("the weather whatever the weather"),
+					uniquePhrase("we'll weather the weather whatever the"),
+					uniquePhrase("weather the weather whatever the weather"),
+					uniquePhrase("we'll weather the weather whatever the weather")					
 				)
-			);
+			),		
+			new StringSentence(sentence)
+				.subPhrases()
+				.table()
+				.entrySet()
+		);
 	}
 
 	private Map.Entry<Phrase, Integer> phraseCount(String phrase, Integer count) {
