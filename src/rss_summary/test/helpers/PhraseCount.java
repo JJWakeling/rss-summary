@@ -1,4 +1,4 @@
-package rss_summary.test;
+package rss_summary.test.helpers;
 
 import java.util.AbstractMap;
 import java.util.Map;

@@ -6,6 +6,7 @@ import java.util.HashSet;
 import java.util.Map;
 import org.junit.Assert;
 import rss_summary.main.*;
+import rss_summary.test.helpers.PhraseCount;
 
 public class StringSentenceFactoryTest {
 
