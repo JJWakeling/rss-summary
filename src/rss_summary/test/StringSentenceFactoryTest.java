@@ -22,9 +22,7 @@ public class StringSentenceFactoryTest {
 		) {
 			phrases =  phrases.sum(sentence.subPhrases());
 		}
-	
-		//TODO: compare the phrases resulting from splitting a multi-sentence text into phrases
-		// with HashMap you would accept
+
 		Assert.assertEquals(
 			new HashSet<Map.Entry<Phrase,Integer>>(
 				Arrays.asList(
