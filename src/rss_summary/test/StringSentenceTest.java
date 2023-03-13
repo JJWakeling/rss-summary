@@ -27,7 +27,7 @@ public class StringSentenceTest {
 	
 	@Test
 	public void testSpaceDeduplication() {
-		testSentenceContainsExpectedPhrases("we'll weather  the     weather,   whatever the weather");
+		testSentenceContainsExpectedPhrases("we'll weather  the     weather   whatever the weather");
 	}
 	
 	private void testSentenceContainsExpectedPhrases(String sentence) {

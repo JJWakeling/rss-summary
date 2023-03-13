@@ -10,8 +10,12 @@ public class StringSentence implements Sentence {
 
 	@Override
 	public AbundanceTable subPhrases() {
+		String[] words = text
+			.trim()
+			.toLowerCase()
+			.split("\\s+");
 		return new WordSentence(
-			text.split(" ")
+			words
 		)
 			.subPhrases();
 	}
