@@ -1,14 +1,20 @@
 package rss_summary.main;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 public class HashMapAbundanceTable implements AbundanceTable {
 
 	private final HashMap<Phrase, Integer> table;
+	
+	public HashMapAbundanceTable(HashMap<Phrase, Integer> table) {
+		this.table = table;
+	}
 
 	public HashMapAbundanceTable() {
-		table = new HashMap<Phrase, Integer>();
+		this(new HashMap<Phrase, Integer>());
 	}
 
 	@Override
@@ -21,8 +27,22 @@ public class HashMapAbundanceTable implements AbundanceTable {
 
 	@Override
 	public AbundanceTable sum(AbundanceTable summand) {
-		// TODO implement
-		return null;
+		Map<Phrase, Integer> summandTable = summand.table();
+	
+		// Set returned by HashMap<T>.keySet is not guaranteed to implement Set.addAll(Set) - Java devs should learn OOP!
+		Set<Phrase> keys = new HashSet<Phrase>(table.keySet());
+		keys.addAll(summand.table().keySet());
+		
+		HashMap<Phrase, Integer> sumTable = new HashMap<Phrase, Integer>();
+		for (Phrase key : keys) {
+			sumTable.put(
+				key,
+				(table.containsKey(key) ? table.get(key) : 0)
+				+ (summandTable.containsKey(key) ? summandTable.get(key) : 0)
+			);
+		}
+		
+		return new HashMapAbundanceTable(sumTable);
 	}
 
 	@Override
