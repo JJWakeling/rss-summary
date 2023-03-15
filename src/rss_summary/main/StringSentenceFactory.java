@@ -1,5 +1,6 @@
 package rss_summary.main;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 public class StringSentenceFactory implements SentenceFactory {
@@ -12,8 +13,14 @@ public class StringSentenceFactory implements SentenceFactory {
 
 	@Override
 	public Collection<Sentence> sentences() {
-		// TODO Auto-generated method stub
-		return null;
+		String[] sentenceStrings = text.split("\\.");
+		
+		ArrayList<Sentence> sentences = new ArrayList<Sentence>(sentenceStrings.length);
+		for (String sentenceString : sentenceStrings) {
+			sentences.add(new StringSentence(sentenceString));
+		}
+		
+		return sentences;
 	}
 
 }

@@ -14,11 +14,13 @@ public class StringSentence implements Sentence {
 			.trim()
 			.toLowerCase()
 			.split("\\s+");
+			
 		for (int i = 0; i < words.length; i++) {
 			words[i] = words[i]
 			.replaceFirst("^\\W+", "")
 			.replaceFirst("\\W+$", "");
 		}
+		
 		return new WordSentence(words)
 			.subPhrases();
 	}
